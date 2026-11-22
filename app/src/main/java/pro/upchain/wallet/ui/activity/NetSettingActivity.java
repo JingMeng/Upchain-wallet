@@ -1,7 +1,7 @@
 package pro.upchain.wallet.ui.activity;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -23,7 +23,7 @@ import static pro.upchain.wallet.C.LOCAL_DEV_NETWORK_NAME;
 import static pro.upchain.wallet.C.ROPSTEN_NETWORK_NAME;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -142,7 +142,7 @@ public class NetSettingActivity extends BaseActivity {
                 ivLocalDev.setVisibility(View.VISIBLE);
 
                  break;
-            case R.id.rl_btn:// 设置语言并保存
+            case R.id.rl_btn:// 璁剧疆璇█骞朵繚瀛?
 //                SharedPreferencesUtil.getInstance().putString("pref_rpcServer",networkName );
 
                 NetworkInfo[] networks = ethereumNetworkRepository.getAvailableNetworkList();
@@ -157,3 +157,4 @@ public class NetSettingActivity extends BaseActivity {
         }
     }
 }
+

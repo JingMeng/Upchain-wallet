@@ -2,7 +2,7 @@ package pro.upchain.wallet.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 import pro.upchain.wallet.domain.ETHWallet;
 
@@ -14,7 +14,7 @@ import pro.upchain.wallet.interact.FetchWalletInteract;
 
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -54,3 +54,4 @@ public class SplashActivity extends AppCompatActivity  {
     }
 
 }
+

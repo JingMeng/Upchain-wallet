@@ -3,7 +3,7 @@ package pro.upchain.wallet.ui.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.os.Vibrator;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -23,7 +23,7 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -124,7 +124,7 @@ public class QRCodeScannerActivity extends BaseActivity implements  EasyPermissi
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
         mZXingView.startCamera();
-        mZXingView.startSpotAndShowRect();   // 显示扫描框，并开始识别
+        mZXingView.startSpotAndShowRect();   // 鏄剧ず鎵弿妗嗭紝骞跺紑濮嬭瘑鍒?
     }
 
     @Override
@@ -141,20 +141,20 @@ public class QRCodeScannerActivity extends BaseActivity implements  EasyPermissi
         mZXingView.startCamera();
 
         mZXingView.changeToScanQRCodeStyle();
-        mZXingView.setType(BarcodeType.ONLY_QR_CODE, null); // 只识别 QR_CODE
-        mZXingView.startSpotAndShowRect();   // 显示扫描框，并开始识别
+        mZXingView.setType(BarcodeType.ONLY_QR_CODE, null); // 鍙瘑鍒?QR_CODE
+        mZXingView.startSpotAndShowRect();   // 鏄剧ず鎵弿妗嗭紝骞跺紑濮嬭瘑鍒?
     }
 
     @Override
     protected void onStop() {
-        mZXingView.stopCamera(); // 关闭摄像头预览，并且隐藏扫描框
+        mZXingView.stopCamera(); // 鍏抽棴鎽勫儚澶撮瑙堬紝骞朵笖闅愯棌鎵弿妗?
         super.onStop();
     }
 
 
     @Override
     protected void onDestroy() {
-        mZXingView.onDestroy(); // 销毁二维码扫描控件
+        mZXingView.onDestroy(); // 閿€姣佷簩缁寸爜鎵弿鎺т欢
         super.onDestroy();
     }
 
@@ -170,7 +170,7 @@ public class QRCodeScannerActivity extends BaseActivity implements  EasyPermissi
 //        if (resultCode == Activity.RESULT_OK && requestCode == PictureConfig.CHOOSE_REQUEST) {
 //            List<LocalMedia> localMedias = PictureSelector.obtainMultipleResult(data);
 //            path = localMedias.get(0).getPath();
-//            // 解析获取的图片中的二维码
+//            // 瑙ｆ瀽鑾峰彇鐨勫浘鐗囦腑鐨勪簩缁寸爜
 //            new DecodeAsyncTask().execute(path);
 //        }
 //    }
@@ -191,9 +191,9 @@ public class QRCodeScannerActivity extends BaseActivity implements  EasyPermissi
     }
 
     /**
-     * 摄像头环境亮度发生变化
+     * 鎽勫儚澶寸幆澧冧寒搴﹀彂鐢熷彉鍖?
      *
-     * @param isDark 是否变暗
+     * @param isDark 鏄惁鍙樻殫
      */
     public void onCameraAmbientBrightnessChanged(boolean isDark) {
         String tipText = mZXingView.getScanBoxView().getTipText();
@@ -211,10 +211,11 @@ public class QRCodeScannerActivity extends BaseActivity implements  EasyPermissi
     }
 
     /**
-     * 处理打开相机出错
+     * 澶勭悊鎵撳紑鐩告満鍑洪敊
      */
     public void onScanQRCodeOpenCameraError() {
-        LogUtils.e(TAG, "打开相机出错");
+        LogUtils.e(TAG, "鎵撳紑鐩告満鍑洪敊");
     }
 
 }
+

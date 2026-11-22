@@ -1,10 +1,10 @@
 package pro.upchain.wallet.ui.activity;
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.TextInputLayout;
-import android.support.v7.widget.Toolbar;
+import com.google.android.material.textfield.TextInputLayout;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
@@ -23,7 +23,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by Tiny熊
+ * Created by Tiny鐔?
  * WeiXin: xlbxiong
  */
 
@@ -92,7 +92,7 @@ public class AddCustomTokenActivity extends BaseActivity {
     }
 
     private void onError(ErrorEnvelope errorEnvelope) {
-//        showDialog("出错~");
+//        showDialog("鍑洪敊~");
 
     }
 
@@ -171,3 +171,4 @@ public class AddCustomTokenActivity extends BaseActivity {
     }
 
 }
+

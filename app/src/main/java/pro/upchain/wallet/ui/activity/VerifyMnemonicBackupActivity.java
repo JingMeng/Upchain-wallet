@@ -1,7 +1,7 @@
 package pro.upchain.wallet.ui.activity;
 
 import android.content.Intent;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
@@ -27,12 +27,12 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
 
-// 验证 助记词是否 正确界面
+// 楠岃瘉 鍔╄璇嶆槸鍚?姝ｇ‘鐣岄潰
 
 public class VerifyMnemonicBackupActivity extends BaseActivity {
     private static final int VERIFY_SUCCESS_RESULT = 2202;
@@ -76,10 +76,10 @@ public class VerifyMnemonicBackupActivity extends BaseActivity {
             verifyMnemonicWordTag.setMnemonicWord(words[i]);
             mnemonicWords.add(verifyMnemonicWordTag);
         }
-        // 乱序
+        // 涔卞簭
         Collections.shuffle(mnemonicWords);
 
-        // 未选中单词
+        // 鏈€変腑鍗曡瘝
         FlexboxLayoutManager layoutManager = new FlexboxLayoutManager(this);
         layoutManager.setFlexWrap(FlexWrap.WRAP);
         layoutManager.setAlignItems(AlignItems.STRETCH);
@@ -88,7 +88,7 @@ public class VerifyMnemonicBackupActivity extends BaseActivity {
         rvMnemonic.setAdapter(verifyBackupMenmonicWordsAdapter);
 
 
-        // 已选中单词
+        // 宸查€変腑鍗曡瘝
         FlexboxLayoutManager layoutManager2 = new FlexboxLayoutManager(this);
         layoutManager2.setFlexWrap(FlexWrap.WRAP);
         layoutManager2.setAlignItems(AlignItems.STRETCH);
@@ -147,7 +147,7 @@ public class VerifyMnemonicBackupActivity extends BaseActivity {
                     LogUtils.d("VerifyMnemonicBackUp", "verifyMnemonic:" + verifyMnemonic);
                     LogUtils.d("VerifyMnemonicBackUp", "trim:" + trim);
                     if (TextUtils.equals(trim, walletMnemonic)) {
-                        // TODO 修改该钱包备份标识
+                        // TODO 淇敼璇ラ挶鍖呭浠芥爣璇?
                         WalletDaoUtils.setIsBackup(walletId);
 //                        AppManager.getAppManager().finishActivity(MnemonicBackupActivity.class);
                         setResult(VERIFY_SUCCESS_RESULT, new Intent());
@@ -162,3 +162,4 @@ public class VerifyMnemonicBackupActivity extends BaseActivity {
         }
     }
 }
+

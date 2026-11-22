@@ -1,6 +1,6 @@
 package pro.upchain.wallet.ui.adapter;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.Log;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
@@ -38,3 +38,4 @@ public class TokensAdapter extends BaseQuickAdapter<Token, BaseViewHolder> {
 
 
 }
+

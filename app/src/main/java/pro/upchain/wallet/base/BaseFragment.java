@@ -18,9 +18,9 @@ package pro.upchain.wallet.base;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.LayoutRes;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
+import androidx.annotation.LayoutRes;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -72,7 +72,7 @@ public abstract class BaseFragment extends Fragment {
     public abstract void initDatas();
 
     /**
-     * 对各种控件进行设置、适配、填充数据
+     * 瀵瑰悇绉嶆帶浠惰繘琛岃缃€侀€傞厤銆佸～鍏呮暟鎹?
      */
     public abstract void configViews();
 

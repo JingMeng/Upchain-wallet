@@ -2,8 +2,8 @@ package pro.upchain.wallet.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +13,7 @@ import pro.upchain.wallet.R;
 import pro.upchain.wallet.view.AddWalletView;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -86,5 +86,6 @@ public class GuideActivity extends AppCompatActivity  implements
         startActivity(intent);
     }
 }
+
 
 

@@ -2,7 +2,7 @@ package pro.upchain.wallet.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,7 +28,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -101,3 +101,4 @@ public class ImportWalletActivity extends BaseActivity {
         // TODO
     }
 }
+

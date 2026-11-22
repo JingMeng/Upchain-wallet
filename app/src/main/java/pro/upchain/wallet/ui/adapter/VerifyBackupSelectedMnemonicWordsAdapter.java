@@ -1,6 +1,6 @@
 package pro.upchain.wallet.ui.adapter;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -9,7 +9,7 @@ import pro.upchain.wallet.R;
 import java.util.List;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -26,3 +26,4 @@ public class VerifyBackupSelectedMnemonicWordsAdapter extends BaseQuickAdapter<S
     }
 
 }
+

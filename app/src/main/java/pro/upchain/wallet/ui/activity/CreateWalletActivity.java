@@ -3,9 +3,9 @@ package pro.upchain.wallet.ui.activity;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.CheckBox;
@@ -28,7 +28,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -155,15 +155,15 @@ public class CreateWalletActivity extends BaseActivity {
     private boolean verifyInfo(String walletName, String walletPwd, String confirmPwd, String pwdReminder) {
         if (WalletDaoUtils.walletNameChecking(walletName)) {
             ToastUtils.showToast(R.string.create_wallet_name_repeat_tips);
-            // 同时不可重复
+            // 鍚屾椂涓嶅彲閲嶅
             return false;
         } else if (TextUtils.isEmpty(walletName)) {
             ToastUtils.showToast(R.string.create_wallet_name_input_tips);
-            // 同时不可重复
+            // 鍚屾椂涓嶅彲閲嶅
             return false;
         } else if (TextUtils.isEmpty(walletPwd)) {
             ToastUtils.showToast(R.string.create_wallet_pwd_input_tips);
-            // 同时判断强弱
+            // 鍚屾椂鍒ゆ柇寮哄急
             return false;
         } else if (TextUtils.isEmpty(confirmPwd) || !TextUtils.equals(confirmPwd, walletPwd)) {
             ToastUtils.showToast(R.string.create_wallet_pwd_confirm_input_tips);
@@ -180,7 +180,7 @@ public class CreateWalletActivity extends BaseActivity {
     }
 
     public void jumpToWalletBackUp(ETHWallet wallet) {
-        ToastUtils.showToast("创建钱包成功");
+        ToastUtils.showToast("鍒涘缓閽卞寘鎴愬姛");
         dismissDialog();
 
         boolean firstAccount = getIntent().getBooleanExtra("first_account", false);
@@ -200,3 +200,4 @@ public class CreateWalletActivity extends BaseActivity {
 
 
 }
+

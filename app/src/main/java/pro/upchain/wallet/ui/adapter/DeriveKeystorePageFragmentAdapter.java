@@ -1,9 +1,9 @@
 package pro.upchain.wallet.ui.adapter;
 
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +15,10 @@ import com.shizhefei.view.indicator.IndicatorViewPager;
 
 import java.util.List;
 
-import static android.support.v4.view.PagerAdapter.POSITION_NONE;
+import static androidx.viewpager.widget.PagerAdapter.POSITION_NONE;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -84,3 +84,4 @@ public class DeriveKeystorePageFragmentAdapter extends IndicatorViewPager.Indica
         notifyDataSetChanged();
     }
 }
+

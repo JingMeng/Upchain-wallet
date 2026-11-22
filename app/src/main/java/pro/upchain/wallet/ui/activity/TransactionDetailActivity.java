@@ -1,7 +1,7 @@
 package pro.upchain.wallet.ui.activity;
 
-import android.arch.lifecycle.ViewModelProviders;
-import android.support.v4.content.ContextCompat;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.core.content.ContextCompat;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
@@ -28,7 +28,7 @@ import butterknife.BindView;
 import static pro.upchain.wallet.C.Key.TRANSACTION;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -163,3 +163,4 @@ public class TransactionDetailActivity extends BaseActivity implements View.OnCl
     }
 
 }
+

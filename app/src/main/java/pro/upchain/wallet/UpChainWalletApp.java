@@ -3,7 +3,7 @@ package pro.upchain.wallet;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.multidex.MultiDexApplication;
+import androidx.multidex.MultiDexApplication;
 
 import pro.upchain.wallet.domain.DaoMaster;
 import pro.upchain.wallet.domain.DaoSession;
@@ -20,7 +20,7 @@ import okhttp3.OkHttpClient;
 
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -76,7 +76,7 @@ public class UpChainWalletApp extends MultiDexApplication {
         repositoryFactory = RepositoryFactory.init(sp, httpClient, gson);
 
 
-        //创建数据库表
+        //鍒涘缓鏁版嵁搴撹〃
         DaoMaster.DevOpenHelper mHelper = new DaoMaster.DevOpenHelper(this, "wallet", null);
         SQLiteDatabase db = mHelper.getWritableDatabase();
         daoSession = new DaoMaster(db).newSession();
@@ -95,3 +95,4 @@ public class UpChainWalletApp extends MultiDexApplication {
 
 
 }
+

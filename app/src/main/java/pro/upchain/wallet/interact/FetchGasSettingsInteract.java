@@ -1,7 +1,7 @@
 package pro.upchain.wallet.interact;
 
 
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import org.web3j.protocol.Web3j;
 import org.web3j.protocol.core.methods.request.Transaction;

@@ -1,10 +1,10 @@
 package pro.upchain.wallet.ui.activity;
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
@@ -30,8 +30,8 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by Tiny熊
- * 微信: xlbxiong
+ * Created by Tiny鐔?
+ * 寰俊: xlbxiong
  */
 
 public class AddTokenActivity extends BaseActivity {
@@ -89,7 +89,7 @@ public class AddTokenActivity extends BaseActivity {
     @Override
     public void initDatas() {
 
-        // TODO 写死了几个热门的ERC20 （ 主网地址）
+        // TODO 鍐欐浜嗗嚑涓儹闂ㄧ殑ERC20 锛?涓荤綉鍦板潃锛?
         mItems.add(new TokenItem(new TokenInfo("", "ETH", "ETH", 18), true, R.drawable.wallet_logo_demo));
         mItems.add(new TokenItem(new TokenInfo("0xB8c77482e45F1F44dE1745F52C74426C631bDD52", "", "BNB", 18), false, R.drawable.wallet_logo_demo));
         mItems.add(new TokenItem(new TokenInfo("0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48", "USD Coin", "USDC", 6), false, R.drawable.wallet_logo_demo));
@@ -160,3 +160,4 @@ public class AddTokenActivity extends BaseActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
+

@@ -1,15 +1,15 @@
 package pro.upchain.wallet.ui.activity;
 
 import android.app.Dialog;
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.BottomSheetDialog;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.Nullable;
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import androidx.appcompat.app.AlertDialog;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -49,7 +49,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -166,7 +166,7 @@ public class SendActivity extends BaseActivity {
         viewModel.progress().observe(this, this::onProgress);
         viewModel.error().observe(this, this::onError);
 
-        // 首页直接扫描进入
+        // 棣栭〉鐩存帴鎵弿杩涘叆
         scanResult = intent.getStringExtra("scan_result");
         if (!TextUtils.isEmpty(scanResult)) {
             parseScanResult(scanResult);
@@ -201,9 +201,9 @@ public class SendActivity extends BaseActivity {
 
 
         final DecimalFormat gasformater = new DecimalFormat();
-        //保留几位小数
+        //淇濈暀鍑犱綅灏忔暟
         gasformater.setMaximumFractionDigits(2);
-        //模式  四舍五入
+        //妯″紡  鍥涜垗浜斿叆
         gasformater.setRoundingMode(RoundingMode.CEILING);
 
 
@@ -435,7 +435,7 @@ public class SendActivity extends BaseActivity {
     }
 
     private void parseScanResult(String result) {
-        if (result.contains(":") && result.contains("?")) {  // 符合协议格式
+        if (result.contains(":") && result.contains("?")) {  // 绗﹀悎鍗忚鏍煎紡
             String[] urlParts = result.split(":");
             if (urlParts[0].equals("ethereum")) {
                 urlParts =  urlParts[1].split("\\?");
@@ -451,7 +451,7 @@ public class SendActivity extends BaseActivity {
             }
 
 
-        } else {  // 无格式， 只有一个地址
+        } else {  // 鏃犳牸寮忥紝 鍙湁涓€涓湴鍧€
             fillAddress(result);
         }
 
@@ -464,7 +464,7 @@ public class SendActivity extends BaseActivity {
         if (requestCode == QRCODE_SCANNER_REQUEST) {
             if (data != null) {
                 String scanResult = data.getStringExtra("scan_result");
-                // 对扫描结果进行处理
+                // 瀵规壂鎻忕粨鏋滆繘琛屽鐞?
                 parseScanResult(scanResult);
 //                ToastUtils.showLongToast(scanResult);
             }
@@ -472,3 +472,4 @@ public class SendActivity extends BaseActivity {
     }
 
 }
+

@@ -1,7 +1,7 @@
 package pro.upchain.wallet.ui.adapter;
 
-import android.support.annotation.Nullable;
-import android.support.v4.content.ContextCompat;
+import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -20,7 +20,7 @@ import java.util.List;
 import static pro.upchain.wallet.C.ETHER_DECIMALS;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -127,3 +127,4 @@ public class TransactionsAdapter  extends BaseQuickAdapter<Transaction, BaseView
 
 
 }
+

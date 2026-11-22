@@ -1,6 +1,6 @@
 package pro.upchain.wallet.entity;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 
 import pro.upchain.wallet.C;
 
@@ -26,3 +26,4 @@ public class ErrorEnvelope {
 		this.throwable = throwable;
 	}
 }
+

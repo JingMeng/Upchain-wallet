@@ -1,15 +1,15 @@
 package pro.upchain.wallet.ui.fragment;
 
-import android.arch.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.Nullable;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -62,7 +62,7 @@ import static pro.upchain.wallet.C.EXTRA_ADDRESS;
 import static pro.upchain.wallet.C.Key.WALLET;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -135,10 +135,10 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
     public void initDatas() {
 
         linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
-        //设置布局管理器
+        //璁剧疆甯冨眬绠＄悊鍣?
         recyclerView.setLayoutManager(linearLayoutManager);
 
-        //设置适配器
+        //璁剧疆閫傞厤鍣?
         recyclerAdapter = new TokensAdapter(R.layout.list_item_property, new ArrayList<>());  //
 
         recyclerView.setAdapter(recyclerAdapter);
@@ -227,7 +227,7 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
                     float alpha = (float) totalDy / bannerHeight;
                     immersionBar.statusBarAlpha(alpha)
                             .init();
-                    // 设置资产文字alpha值
+                    // 璁剧疆璧勪骇鏂囧瓧alpha鍊?
                     if (totalDy >= bannerHeight / 2) {
                         float tvPropertyAlpha = (float) (totalDy - bannerHeight / 2) / (bannerHeight / 2);
                         tvPropertToolbaryLabel.setAlpha(tvPropertyAlpha);
@@ -309,7 +309,7 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
 
         tokensViewModel.prepare();
 
-        // 更改货币单位
+        // 鏇存敼璐у竵鍗曚綅
         if (!currency.equals(tokensViewModel.getCurrency())) {
             currency = tokensViewModel.getCurrency();
             if (currency.equals("CNY")) {
@@ -343,17 +343,17 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
             case R.id.lly_menu:
                 openOrCloseDrawerLayout();
                 break;
-            case R.id.lly_qrcode_scanner:// 二维码扫描
+            case R.id.lly_qrcode_scanner:// 浜岀淮鐮佹壂鎻?
                 intent = new Intent(mContext, QRCodeScannerActivity.class);
                 startActivityForResult(intent, QRCODE_SCANNER_REQUEST);
                 openOrCloseDrawerLayout();
                 break;
-            case R.id.lly_create_wallet:// 创建钱包
+            case R.id.lly_create_wallet:// 鍒涘缓閽卞寘
                 intent = new Intent(mContext, CreateWalletActivity.class);
                 startActivityForResult(intent, CREATE_WALLET_REQUEST);
                 openOrCloseDrawerLayout();
                 break;
-            case R.id.lly_add_token:// 跳转添加资产
+            case R.id.lly_add_token:// 璺宠浆娣诲姞璧勪骇
 //                tokensViewModel.showAddToken(this.getApplicationContext());
 
                 intent = new Intent(mContext, AddTokenActivity.class);
@@ -362,7 +362,7 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
 
                 break;
 
-            case R.id.lly_wallet_address:  // 跳转收款码
+            case R.id.lly_wallet_address:  // 璺宠浆鏀舵鐮?
                 intent = new Intent(mContext, GatheringQRCodeActivity.class);
                 wallet = WalletDaoUtils.getCurrent();
                 if (wallet == null) {
@@ -373,7 +373,7 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
                 startActivity(intent);
                 break;
 
-            case R.id.civ_wallet_logo:// 跳转钱包详情
+            case R.id.civ_wallet_logo:// 璺宠浆閽卞寘璇︽儏
                 intent = new Intent(mContext, WalletDetailActivity.class);
                 wallet = WalletDaoUtils.getCurrent();
                 if (wallet == null) {
@@ -392,7 +392,7 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
 
     }
 
-    // 打开关闭DrawerLayout
+    // 鎵撳紑鍏抽棴DrawerLayout
     private void openOrCloseDrawerLayout() {
         boolean drawerOpen = drawer.isDrawerOpen(Gravity.END);
         if (drawerOpen) {
@@ -408,7 +408,7 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
         if (requestCode == QRCODE_SCANNER_REQUEST) {
             if (data != null) {
                 String scanResult = data.getStringExtra("scan_result");
-                // 对扫描结果进行处理
+                // 瀵规壂鎻忕粨鏋滆繘琛屽鐞?
                 ToastUtils.showLongToast(scanResult);
 
                 Intent intent = new Intent(mContext, SendActivity.class);
@@ -470,3 +470,4 @@ public class PropertyFragment extends BaseFragment implements View.OnClickListen
         ImmersionBar.with(this).destroy();
     }
 }
+

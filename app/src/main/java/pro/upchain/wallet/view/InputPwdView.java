@@ -1,7 +1,7 @@
 package pro.upchain.wallet.view;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
@@ -50,3 +50,4 @@ public class InputPwdView extends FrameLayout {
         showKeyBoard();
     }
 }
+

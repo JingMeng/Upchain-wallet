@@ -17,8 +17,8 @@ package pro.upchain.wallet.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -53,7 +53,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         ImmersionBar.with(this).init();
         unbinder = ButterKnife.bind(this);
 
-        mCommonToolbar = ButterKnife.findById(this, R.id.common_toolbar);
+        mCommonToolbar = findViewById(R.id.common_toolbar);
         if (mCommonToolbar != null) {
             ImmersionBar.with(this)
                     .titleBar(mCommonToolbar, false)
@@ -86,7 +86,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         unbinder.unbind();
-        ImmersionBar.with(this).destroy(); //必须调用该方法，防止内存泄漏
+        ImmersionBar.with(this).destroy(); //蹇呴』璋冪敤璇ユ柟娉曪紝闃叉鍐呭瓨娉勬紡
         dismissDialog();
     }
 
@@ -97,7 +97,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public abstract void initDatas();
 
     /**
-     * 对各种控件进行设置、适配、填充数据
+     * 瀵瑰悇绉嶆帶浠惰繘琛岃缃€侀€傞厤銆佸～鍏呮暟鎹?
      */
     public abstract void configViews();
 
@@ -165,3 +165,4 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
 }
+

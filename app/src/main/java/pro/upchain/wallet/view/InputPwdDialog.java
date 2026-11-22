@@ -3,7 +3,7 @@ package pro.upchain.wallet.view;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
@@ -40,7 +40,7 @@ public class InputPwdDialog extends Dialog implements View.OnClickListener {
         setContentView(R.layout.dialog_input_pwd);
         setCanceledOnTouchOutside(false);
         initView();
-        //初始化界面控件的事件
+        //鍒濆鍖栫晫闈㈡帶浠剁殑浜嬩欢
         initEvent();
     }
 
@@ -71,10 +71,10 @@ public class InputPwdDialog extends Dialog implements View.OnClickListener {
     public void onClick(View v) {
         if (onInputDialogButtonClickListener != null) {
             switch (v.getId()) {
-                case R.id.btn_cancel:// 取消
+                case R.id.btn_cancel:// 鍙栨秷
                     onInputDialogButtonClickListener.onCancel();
                     break;
-                case R.id.btn_confirm:// 确定
+                case R.id.btn_confirm:// 纭畾
                     String pwd = etPwd.getText().toString().trim();
                     if (TextUtils.isEmpty(pwd)) {
                         ToastUtils.showToast(R.string.input_pwd_dialog_tip);
@@ -98,3 +98,4 @@ public class InputPwdDialog extends Dialog implements View.OnClickListener {
         etPwd.setText("");
     }
 }
+

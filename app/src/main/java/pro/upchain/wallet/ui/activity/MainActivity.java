@@ -2,7 +2,7 @@ package pro.upchain.wallet.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,8 +25,8 @@ import butterknife.BindView;
 
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
- * 微信: xlbxiong
+ * Created by Tiny 鐔?@ Upchain.pro
+ * 寰俊: xlbxiong
  */
 
 public class MainActivity extends BaseActivity implements View.OnClickListener {
@@ -82,9 +82,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         vpHome.setCurrentItem(0, false);
     }
 
-    // 退出时间
+    // 閫€鍑烘椂闂?
     private long currentBackPressedTime = 0;
-    // 退出间隔
+    // 閫€鍑洪棿闅?
     private static final int BACK_PRESSED_INTERVAL = 2000;
 
     @Override
@@ -96,7 +96,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 ToastUtils.showToast(getString(R.string.exit_tips));
                 return true;
             } else {
-                finish(); // 退出
+                finish(); // 閫€鍑?
             }
         } else if (event.getKeyCode() == KeyEvent.KEYCODE_MENU) {
             return true;
@@ -109,12 +109,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void onClick(View v) {
         setAllUnselected();
         switch (v.getId()) {
-            case R.id.lly_mall:// 商场
+            case R.id.lly_mall:// 鍟嗗満
                 ivMall.setSelected(true);
                 tvMall.setSelected(true);
                 vpHome.setCurrentItem(0, false);
                 break;
-            case R.id.lly_mine:// 我的
+            case R.id.lly_mine:// 鎴戠殑
                 ivMine.setSelected(true);
                 tvMine.setSelected(true);
                 vpHome.setCurrentItem(1, false);
@@ -141,3 +141,4 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
 
 }
+

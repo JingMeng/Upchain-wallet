@@ -1,7 +1,7 @@
 package pro.upchain.wallet.utils;
 
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import pro.upchain.wallet.domain.ETHWallet;
@@ -27,27 +27,27 @@ import java.security.SecureRandom;
 import java.util.List;
 
 /**
- * 以太坊钱包创建工具类
+ * 浠ュお鍧婇挶鍖呭垱寤哄伐鍏风被
  */
 
 public class ETHWalletUtils {
 
     private static ObjectMapper objectMapper = ObjectMapperFactory.getObjectMapper();
     /**
-     * 随机
+     * 闅忔満
      */
     private static final SecureRandom secureRandom = SecureRandomUtils.secureRandom();
     private Credentials credentials;
 
     /**
-     * 通用的以太坊基于bip44协议的助记词路径 （imtoken jaxx Metamask myetherwallet）
+     * 閫氱敤鐨勪互澶潑鍩轰簬bip44鍗忚鐨勫姪璁拌瘝璺緞 锛坕mtoken jaxx Metamask myetherwallet锛?
      */
     public static String ETH_JAXX_TYPE = "m/44'/60'/0'/0/0";
     public static String ETH_LEDGER_TYPE = "m/44'/60'/0'/0";
     public static String ETH_CUSTOM_TYPE = "m/44'/60'/1'/0/0";
 
     /**
-     * 创建助记词，并通过助记词创建钱包
+     * 鍒涘缓鍔╄璇嶏紝骞堕€氳繃鍔╄璇嶅垱寤洪挶鍖?
      *
      * @param walletName
      * @param pwd
@@ -63,21 +63,21 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 通过导入助记词，导入钱包
+     * 閫氳繃瀵煎叆鍔╄璇嶏紝瀵煎叆閽卞寘
      *
-     * @param path 路径
-     * @param list 助记词
-     * @param pwd  密码
+     * @param path 璺緞
+     * @param list 鍔╄璇?
+     * @param pwd  瀵嗙爜
      * @return
      */
     public static ETHWallet importMnemonic(String path, List<String> list, String pwd) {
         if (!path.startsWith("m") && !path.startsWith("M")) {
-            //参数非法
+            //鍙傛暟闈炴硶
             return null;
         }
         String[] pathArray = path.split("/");
         if (pathArray.length <= 1) {
-            //内容不对
+            //鍐呭涓嶅
             return null;
         }
         String passphrase = "";
@@ -101,19 +101,19 @@ public class ETHWalletUtils {
     }
 
     /**
-     * @param walletName 钱包名称
-     * @param ds         助记词加密种子
-     * @param pathArray  助记词标准
-     * @param pwd        密码
+     * @param walletName 閽卞寘鍚嶇О
+     * @param ds         鍔╄璇嶅姞瀵嗙瀛?
+     * @param pathArray  鍔╄璇嶆爣鍑?
+     * @param pwd        瀵嗙爜
      * @return
      */
     @Nullable
     public static ETHWallet generateWalletByMnemonic(String walletName, DeterministicSeed ds,
                                                      String[] pathArray, String pwd) {
-        //种子
+        //绉嶅瓙
         byte[] seedBytes = ds.getSeedBytes();
 //        System.out.println(Arrays.toString(seedBytes));
-        //助记词
+        //鍔╄璇?
         List<String> mnemonic = ds.getMnemonicCode();
         LogUtils.d("mnemonic: " + mnemonic);
         if (seedBytes == null)
@@ -176,7 +176,7 @@ public class ETHWalletUtils {
         String keystorePath = "keystore_" + walletName + ".json";
         File destination = new File(wallet_dir, "keystore_" + walletName + ".json");
 
-        //目录不存在则创建目录，创建不了则报错
+        //鐩綍涓嶅瓨鍦ㄥ垯鍒涘缓鐩綍锛屽垱寤轰笉浜嗗垯鎶ラ敊
         if (!createParentDir(destination)) {
             return null;
         }
@@ -195,10 +195,10 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 通过keystore.json文件导入钱包
+     * 閫氳繃keystore.json鏂囦欢瀵煎叆閽卞寘
      *
-     * @param keystore 原json文件
-     * @param pwd      json文件密码
+     * @param keystore 鍘焜son鏂囦欢
+     * @param pwd      json鏂囦欢瀵嗙爜
      * @return
      */
     public static ETHWallet loadWalletByKeystore(String keystore, String pwd) {
@@ -224,7 +224,7 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 通过明文私钥导入钱包
+     * 閫氳繃鏄庢枃绉侀挜瀵煎叆閽卞寘
      *
      * @param privateKey
      * @param pwd
@@ -248,12 +248,12 @@ public class ETHWalletUtils {
     }
 
     private static boolean createParentDir(File file) {
-        //判断目标文件所在的目录是否存在
+        //鍒ゆ柇鐩爣鏂囦欢鎵€鍦ㄧ殑鐩綍鏄惁瀛樺湪
         if (!file.getParentFile().exists()) {
-            //如果目标文件所在的目录不存在，则创建父目录
+            //濡傛灉鐩爣鏂囦欢鎵€鍦ㄧ殑鐩綍涓嶅瓨鍦紝鍒欏垱寤虹埗鐩綍
             System.out.println("目标文件所在目录不存在，准备创建");
             if (!file.getParentFile().mkdirs()) {
-                System.out.println("创建目标文件所在目录失败！");
+                System.out.println("鍒涘缓鐩爣鏂囦欢鎵€鍦ㄧ洰褰曞け璐ワ紒");
                 return false;
             }
         }
@@ -261,7 +261,7 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 修改钱包密码
+     * 淇敼閽卞寘瀵嗙爜
      *
      * @param walletId
      * @param walletName
@@ -289,10 +289,10 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 导出明文私钥
+     * 瀵煎嚭鏄庢枃绉侀挜
      *
-     * @param walletId 钱包Id
-     * @param pwd      钱包密码
+     * @param walletId 閽卞寘Id
+     * @param pwd      閽卞寘瀵嗙爜
      * @return
      */
     public static String derivePrivateKey(long walletId, String pwd) {
@@ -313,7 +313,7 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 导出keystore文件
+     * 瀵煎嚭keystore鏂囦欢
      *
      * @param walletId
      * @param pwd
@@ -333,7 +333,7 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 删除钱包
+     * 鍒犻櫎閽卞寘
      *
      * @param walletId
      * @return
@@ -349,25 +349,26 @@ public class ETHWalletUtils {
     }
 
     /**
-     * 删除单个文件
+     * 鍒犻櫎鍗曚釜鏂囦欢
      *
-     * @param fileName 要删除的文件的文件名
-     * @return 单个文件删除成功返回true，否则返回false
+     * @param fileName 瑕佸垹闄ょ殑鏂囦欢鐨勬枃浠跺悕
+     * @return 鍗曚釜鏂囦欢鍒犻櫎鎴愬姛杩斿洖true锛屽惁鍒欒繑鍥瀎alse
      */
     public static boolean deleteFile(String fileName) {
         File file = new File(fileName);
-        // 如果文件路径所对应的文件存在，并且是一个文件，则直接删除
+        // 濡傛灉鏂囦欢璺緞鎵€瀵瑰簲鐨勬枃浠跺瓨鍦紝骞朵笖鏄竴涓枃浠讹紝鍒欑洿鎺ュ垹闄?
         if (file.exists() && file.isFile()) {
             if (file.delete()) {
-//                System.out.println("删除单个文件" + fileName + "成功！");
+//                System.out.println("鍒犻櫎鍗曚釜鏂囦欢" + fileName + "鎴愬姛锛?);
                 return true;
             } else {
-//                System.out.println("删除单个文件" + fileName + "失败！");
+//                System.out.println("鍒犻櫎鍗曚釜鏂囦欢" + fileName + "澶辫触锛?);
                 return false;
             }
         } else {
-//            System.out.println("删除单个文件失败：" + fileName + "不存在！");
+//            System.out.println("鍒犻櫎鍗曚釜鏂囦欢澶辫触锛? + fileName + "涓嶅瓨鍦紒");
             return false;
         }
     }
 }
+

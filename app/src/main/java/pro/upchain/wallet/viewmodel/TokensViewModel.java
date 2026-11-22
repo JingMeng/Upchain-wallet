@@ -1,7 +1,7 @@
 package pro.upchain.wallet.viewmodel;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.lifecycle.MutableLiveData;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import pro.upchain.wallet.UpChainWalletApp;
 import pro.upchain.wallet.domain.ETHWallet;

@@ -5,7 +5,7 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.view.View;
 import android.widget.TextView;
 
@@ -39,7 +39,7 @@ public class PrivateKeyDerivetDialog extends Dialog implements View.OnClickListe
         setCanceledOnTouchOutside(false);
         tvPrivateKey = (TextView)findViewById(R.id.tv_private_key);
         btnCopy = (TextView) findViewById(R.id.btn_copy);
-        //初始化界面控件的事件
+        //鍒濆鍖栫晫闈㈡帶浠剁殑浜嬩欢
         initEvent();
     }
 
@@ -52,13 +52,13 @@ public class PrivateKeyDerivetDialog extends Dialog implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btn_copy:// 确定
+            case R.id.btn_copy:// 纭畾
                 ClipboardManager cm = (ClipboardManager) getContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                // 将文本内容放到系统剪贴板里。
+                // 灏嗘枃鏈唴瀹规斁鍒扮郴缁熷壀璐存澘閲屻€?
                 if (cm != null) {
-                    // 创建普通字符型ClipData
+                    // 鍒涘缓鏅€氬瓧绗﹀瀷ClipData
                     ClipData mClipData = ClipData.newPlainText("Label", tvPrivateKey.getText().toString());
-                    // 将ClipData内容放到系统剪贴板里。
+                    // 灏咰lipData鍐呭鏀惧埌绯荤粺鍓创鏉块噷銆?
                     cm.setPrimaryClip(mClipData);
                 }
                 btnCopy.setText(R.string.derive_private_key_already_copy_btn);
@@ -70,3 +70,4 @@ public class PrivateKeyDerivetDialog extends Dialog implements View.OnClickListe
     }
 
 }
+

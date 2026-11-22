@@ -5,8 +5,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.support.annotation.DrawableRes;
-import android.support.annotation.Nullable;
+import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -27,7 +27,7 @@ public class GlideImageLoader extends ImageLoader {
     private int defaultImage;
 
     /**
-     * Url加载图片
+     * Url鍔犺浇鍥剧墖
      *
      * @param view
      * @param url
@@ -38,7 +38,7 @@ public class GlideImageLoader extends ImageLoader {
     }
 
     /**
-     * 加载Bitmap
+     * 鍔犺浇Bitmap
      *
      * @param imageView
      * @param bitmap
@@ -50,13 +50,13 @@ public class GlideImageLoader extends ImageLoader {
 
     @SuppressLint("CheckResult")
     private static void loadImage(final ImageView view, Object img, @DrawableRes int defaultImage, @DrawableRes int errorImage) {
-        // 不能崩
+        // 涓嶈兘宕?
         if (view == null) {
             LogUtils.e("GlideUtils -> display -> imageView is null");
             return;
         }
         Context context = view.getContext();
-        // View你还活着吗？
+        // View浣犺繕娲荤潃鍚楋紵
         if (context instanceof Activity) {
             if (((Activity) context).isFinishing()) {
                 return;
@@ -90,11 +90,11 @@ public class GlideImageLoader extends ImageLoader {
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
         /**
-         注意：
-         1.图片加载器由自己选择，这里不限制，只是提供几种使用方法
-         2.返回的图片路径为Object类型，由于不能确定你到底使用的那种图片加载器，
-         传输的到的是什么格式，那么这种就使用Object接收和返回，你只需要强转成你传输的类型就行，
-         切记不要胡乱强转！
+         娉ㄦ剰锛?
+         1.鍥剧墖鍔犺浇鍣ㄧ敱鑷繁閫夋嫨锛岃繖閲屼笉闄愬埗锛屽彧鏄彁渚涘嚑绉嶄娇鐢ㄦ柟娉?
+         2.杩斿洖鐨勫浘鐗囪矾寰勪负Object绫诲瀷锛岀敱浜庝笉鑳界‘瀹氫綘鍒板簳浣跨敤鐨勯偅绉嶅浘鐗囧姞杞藉櫒锛?
+         浼犺緭鐨勫埌鐨勬槸浠€涔堟牸寮忥紝閭ｄ箞杩欑灏变娇鐢∣bject鎺ユ敹鍜岃繑鍥烇紝浣犲彧闇€瑕佸己杞垚浣犱紶杈撶殑绫诲瀷灏辫锛?
+         鍒囪涓嶈鑳′贡寮鸿浆锛?
          */
 
         loadImage(imageView, path, defaultImage, -1);
@@ -102,3 +102,4 @@ public class GlideImageLoader extends ImageLoader {
     }
 
 }
+

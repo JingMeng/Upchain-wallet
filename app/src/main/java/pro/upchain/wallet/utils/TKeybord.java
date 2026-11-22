@@ -8,7 +8,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Looper;
 import android.os.MessageQueue;
-import android.support.annotation.RequiresApi;
+import androidx.annotation.RequiresApi;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -21,14 +21,14 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
- * 键盘工具
+ * 閿洏宸ュ叿
  * Created by jing on 2016/8/19.
  */
 public class TKeybord {
 
     /**
-     * 打开键盘
-     * 废弃，使用 {@link #openKeybord(EditText)}
+     * 鎵撳紑閿洏
+     * 搴熷純锛屼娇鐢?{@link #openKeybord(EditText)}
      *
      * @param mEditText
      * @param mContext
@@ -40,7 +40,7 @@ public class TKeybord {
     }
 
     /**
-     * 打开键盘
+     * 鎵撳紑閿洏
      *
      * @param mEditText
      */
@@ -55,8 +55,8 @@ public class TKeybord {
     }
 
     /**
-     * 关闭软键盘
-     * 废弃，使用 {@link #closeKeybord(EditText)}
+     * 鍏抽棴杞敭鐩?
+     * 搴熷純锛屼娇鐢?{@link #closeKeybord(EditText)}
      *
      * @param mEditText
      * @param mContext
@@ -67,18 +67,18 @@ public class TKeybord {
     }
 
     /**
-     * 关闭软键盘
+     * 鍏抽棴杞敭鐩?
      *
      * @param mEditText
      */
     public static void closeKeybord(EditText mEditText) {
         LogUtils.w("closeKeybord");
         InputMethodManager imm = (InputMethodManager) mEditText.getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-        imm.hideSoftInputFromWindow(mEditText.getWindowToken(), 0); //强制隐藏键盘
+        imm.hideSoftInputFromWindow(mEditText.getWindowToken(), 0); //寮哄埗闅愯棌閿洏
     }
 
     /**
-     * 销毁键盘时候调用
+     * 閿€姣侀敭鐩樻椂鍊欒皟鐢?
      * @param destContext
      */
 //    public static void fixInputMethodManagerLeak(Context destContext) {
@@ -104,10 +104,10 @@ public class TKeybord {
 //                obj_get = f.get(imm);
 //                if (obj_get != null && obj_get instanceof View) {
 //                    View v_get = (View) obj_get;
-//                    if (v_get.getContext() == destContext) { // 被InputMethodManager持有引用的context是想要目标销毁的
-//                        f.set(imm, null); // 置空，破坏掉path to gc节点
+//                    if (v_get.getContext() == destContext) { // 琚獻nputMethodManager鎸佹湁寮曠敤鐨刢ontext鏄兂瑕佺洰鏍囬攢姣佺殑
+//                        f.set(imm, null); // 缃┖锛岀牬鍧忔帀path to gc鑺傜偣
 //                    } else {
-//                        // 不是想要目标销毁的，即为又进了另一层界面了，不要处理，避免影响原逻辑,也就不用继续for循环了
+//                        // 涓嶆槸鎯宠鐩爣閿€姣佺殑锛屽嵆涓哄張杩涗簡鍙︿竴灞傜晫闈簡锛屼笉瑕佸鐞嗭紝閬垮厤褰卞搷鍘熼€昏緫,涔熷氨涓嶇敤缁х画for寰幆浜?
 //                        break;
 //                    }
 //                }
@@ -118,7 +118,7 @@ public class TKeybord {
 //    }
 
     /**
-     * 在使用完调用
+     * 鍦ㄤ娇鐢ㄥ畬璋冪敤
      * Fix for https://code.google.com/p/android/issues/detail?id=171190 .
      * <p>
      * When a view that has focus gets detached, we wait for the main thread to be idle and then
@@ -309,3 +309,4 @@ public class TKeybord {
 
 
 }
+

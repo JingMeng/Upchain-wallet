@@ -1,7 +1,7 @@
 package pro.upchain.wallet.ui.activity;
 
 import android.content.Intent;
-import android.support.v4.widget.SwipeRefreshLayout;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -19,7 +19,7 @@ import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -74,3 +74,4 @@ public class TransactionsActivity extends BaseActivity {
         }
     }
 }
+

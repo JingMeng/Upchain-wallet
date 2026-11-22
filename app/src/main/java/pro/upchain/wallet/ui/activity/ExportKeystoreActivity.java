@@ -2,7 +2,7 @@ package pro.upchain.wallet.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import androidx.viewpager.widget.ViewPager;
 import android.widget.TextView;
 
 import pro.upchain.wallet.R;
@@ -23,7 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 
 /**
- * Created by Tiny 熊 @ Upchain.pro
+ * Created by Tiny 鐔?@ Upchain.pro
  * WeiXin: xlbxiong
  */
 
@@ -60,7 +60,7 @@ public class ExportKeystoreActivity extends BaseActivity {
         deriveKeystoreStringFragment = new ExportKeystoreStringFragment();
         deriveKeystoreQRCodeFragment = new ExportKeystoreQRCodeFragment();
         Bundle bundle = new Bundle();
-        bundle.putString("walletKeystore",walletKeystore);//这里的values就是我们要传的值
+        bundle.putString("walletKeystore",walletKeystore);//杩欓噷鐨剉alues灏辨槸鎴戜滑瑕佷紶鐨勫€?
         deriveKeystoreStringFragment.setArguments(bundle);
         deriveKeystoreQRCodeFragment.setArguments(bundle);
         fragmentList.add(deriveKeystoreStringFragment);
@@ -83,3 +83,4 @@ public class ExportKeystoreActivity extends BaseActivity {
     }
 
 }
+
